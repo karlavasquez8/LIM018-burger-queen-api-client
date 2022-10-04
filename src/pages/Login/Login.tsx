@@ -5,18 +5,19 @@ function Login() {
     return (
         <div className="Login">
             <header className="Login-header">
-                <img src={logo} className="Login-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
+                <div className='Login-conten'>
+                    <img src={logo} className="Login-logo" alt="logo" />
+                </div>
+                <div className="Container-form">
+                    <h1> LET'S START </h1>
+                    <form className='Login-form'>
+                        <p> Correo </p>
+                        <input name="email" type="email" id="inputEmail" className="Login-input" placeholder="E-mail" ></input>
+                        <p> Contraseña</p>
+                        <input name="password" type="password" id="inputPassword" className="Login-input" placeholder="Contraseña"></input>
+                        <button type="submit" className="Login-btn"> Iniciar sesión </button>
+                    </form>
+                </div>
             </header>
         </div>
     );
