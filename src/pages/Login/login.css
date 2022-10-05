@@ -12,7 +12,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #E23600;
+    color: #c13434;
     text-align: center;
     padding: 0 2.2rem;
 }
@@ -45,7 +45,7 @@ h1 {
     border-radius: 4px;
     border: none;
     cursor: pointer;
-    background-color: #E23600;
+    background-color: #c13434;
     color: white;
     text-decoration: none;
 }
@@ -53,7 +53,7 @@ h1 {
 .Login-input {
     text-align: center;
     width: 230px;
-    background: #D9D9D9;
+    background: #fdefb9;
     border: 0;
     padding: 0.8rem;
     text-decoration: none;
