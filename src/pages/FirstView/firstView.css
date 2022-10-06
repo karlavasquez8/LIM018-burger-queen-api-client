@@ -42,9 +42,9 @@ header {
 .info-items {
     background-color: #BF8B67;
     font-size: 12px;
-    max-width: 170px;
-    min-width: min-content;
-    width: 100%;
+    width: 30%;
+    margin: 2rem;
+    color: #FFFFFF;
 }
 
 .data-items {
@@ -53,4 +53,30 @@ header {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    background-color: #632626;
+    color: #FFFFFF;
+}
+
+.square-btn {
+    background-color: #BF8B67;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Login-btn {
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background-color: #DACC96;
+    color: #632626;
+    text-decoration: none;
+    margin: 0.5rem;
+}
+
+.items {
+    background-color: #FFFFFF;
+    width: 50%;
+    height: 40vh;
+    margin: 3rem;
 }
