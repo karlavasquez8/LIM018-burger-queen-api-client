@@ -41,7 +41,7 @@ header {
 
 .info-items {
     background-color: #BF8B67;
-    font-size: 12px;
+    font-size: 20px;
     width: 30%;
     margin: 2rem;
     color: #FFFFFF;
@@ -79,4 +79,18 @@ header {
     width: 50%;
     height: 40vh;
     margin: 3rem;
+}
+
+.img-item {
+    width: 200px;
+    height: auto;
+}
+
+.fondo-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.container-menu {
+    display: flex;
 }
