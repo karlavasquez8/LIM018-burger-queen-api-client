@@ -42,6 +42,11 @@ function FirstView() {
                                     <button className="Login-btn"> Desayuno </button>
                                     <button className="Login-btn"> Almuerzo y Cena </button>
                                 </div>
+                                <div className='square-btn'>
+                                    <button className="Login-btn"> Hamburguesas </button>
+                                    <button className="Login-btn"> Acompañamientos </button>
+                                    <button className="Login-btn"> Para tomar </button>
+                                </div>
                                     <div className='fondo-items'>
                                         <section className='info-items'>
                                             <div className="img-item">
