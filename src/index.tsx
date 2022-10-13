@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import FirstView from './pages/FirstView/FirstView';
+import Login from 'pages/Login/Login';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <FirstView />
+    <Login />
   </React.StrictMode>
 );
 
