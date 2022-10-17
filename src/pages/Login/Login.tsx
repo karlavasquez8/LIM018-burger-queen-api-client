@@ -1,7 +1,24 @@
 import logo from 'img/logo.png'
 import './login.css'
 
+const data = {
+	"email": "mesera5@gmail.com",
+	"password": "laloca123"
+}
+
 function Login() {
+    const API_URL= "http://localhost:3001";
+    const authPath = "/auth";
+
+    fetch(`${API_URL}${authPath}`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data) // convierte js a json
+    })
+        .then(response => response.json())
+        console.log
+        .then(data => console.log(data));
+
     return (
         <div className="Login">
             <header className="Login-header">
