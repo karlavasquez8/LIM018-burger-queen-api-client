@@ -26,15 +26,16 @@ server.use((req, res, next) => {
 server.post('/auth', (req, res) => {
 
   if (
-    req.body.email === 'iam@fakel.lol' &&
-    req.body.password === 'apasswordtochange') {
+    req.body.email === 'mesera5@gmail.com' &&
+    req.body.password === 'laloca123') {
     res.jsonp({
       token: secret
     })
   } else res.status(400).send('Bad Request')
 })
+// para probar si esta corriendo el servidor
 
 server.use(router)
-server.listen(3000, () => {
+server.listen(3001, () => {
   console.log('JSON Server is running')
 })
