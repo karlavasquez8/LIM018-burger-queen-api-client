@@ -1,3 +1,4 @@
+import React from 'react'
 import logo from '../../img/logo.png'
 import logoCocinero from '../../img/logo-cocinero.png'
 import './firstView.css'
@@ -14,8 +15,8 @@ function FirstView() {
 
                     <div className='Option-nav'>
                         <div>
-                            <button className="Login-btn"> Menú </button>
-                            <button className="Login-btn"> Ordenes </button>
+                            <button className="Home-btn"> Menú </button>
+                            <button className="Home-btn"> Ordenes </button>
                         </div>
                         <img src={logoCocinero} className="Logo-cocinero" alt="logo" />
                     </div>
@@ -27,13 +28,8 @@ function FirstView() {
                         <div className="container-menu">
                             <div className='items'>
                                 <div className='square-btn'>
-                                    <button className="Login-btn"> Desayuno </button>
-                                    <button className="Login-btn"> Almuerzo y Cena </button>
-                                </div>
-                                <div className='square-btn'>
-                                    <button className="Login-btn"> Hamburguesas </button>
-                                    <button className="Login-btn"> Acompañamientos </button>
-                                    <button className="Login-btn"> Para tomar </button>
+                                    <button className="Menu-btn"> Desayuno </button>
+                                    <button className="Menu-btn"> Almuerzo y Cena </button>
                                 </div>
                                 <div className='fondo-items'>
                                     <CardItems img='' name='' price={7} />

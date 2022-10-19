@@ -1,3 +1,5 @@
+import React from 'react'
+
 interface CardItemsProps {
     name: string;
     img: string;

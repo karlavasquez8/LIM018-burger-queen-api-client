@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from 'img/logo.png'
+import logo from '../../img/logo.png'
 import './login.css'
 
 
@@ -84,6 +84,7 @@ function Login() {
                         <input name="password" type="password" id="inputPassword" className="Login-input" placeholder="Contraseña"
                             onChange={(event) => setPassword(event.target.value)}
                         />
+                        <p>{errorMessage}</p>
                         <button type="submit" className="Login-btn"> Iniciar sesión </button>
                     </form>
                 </div>
