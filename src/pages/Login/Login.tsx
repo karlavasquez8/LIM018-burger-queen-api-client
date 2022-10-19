@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from 'img/logo.png'
 import './login.css'
 
@@ -11,6 +12,7 @@ import './login.css'
 // }
 
 function Login() {
+    const navigate = useNavigate()
     const API_URL = "http://localhost:3001";
     const authPath = "/auth";
     const [email, setEmail] = useState<string>();
@@ -38,7 +40,7 @@ function Login() {
                 .then((res) => {
                     /* console.log(res.status); */
                     if (res.status === 200) {
-                        // navigate("/menu");
+                        navigate("/menu");
                     }
                     return res.json()
                 })
