@@ -1,5 +1,5 @@
-import logo from 'img/logo.png'
-import logoCocinero from 'img/logo-cocinero.png'
+import logo from '../../img/logo.png'
+import logoCocinero from '../../img/logo-cocinero.png'
 import './firstView.css'
 import CardItems from './CardItems'
 
