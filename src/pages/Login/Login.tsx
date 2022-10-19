@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from 'img/logo.png'
+import logo from '../../img/logo.png'
 import './login.css'
 
 

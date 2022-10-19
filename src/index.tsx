@@ -13,7 +13,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/" element={<FirstView />} />
+      <Route path="/menu" element={<FirstView />} />
     </Routes>
   </BrowserRouter>
 );
