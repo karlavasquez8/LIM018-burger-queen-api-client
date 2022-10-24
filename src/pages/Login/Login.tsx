@@ -84,6 +84,7 @@ function Login() {
                         <input name="password" type="password" id="inputPassword" className="Login-input" placeholder="Contraseña"
                             onChange={(event) => setPassword(event.target.value)}
                         />
+                        <p>{errorMessage}</p>
                         <button type="submit" className="Login-btn"> Iniciar sesión </button>
                     </form>
                 </div>
