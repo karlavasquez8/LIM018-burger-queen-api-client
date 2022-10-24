@@ -1,8 +1,8 @@
-import logo from '../../img/logo.png'
-import logoCocinero from '../../img/logo-cocinero.png'
+
+import React,{useEffect, useState}from 'react'
 import './firstView.css'
 import CardItems from './CardItems'
-import React, {useEffect, useState} from 'react'
+import NavHeader from '../Components/NavHeader'
 
 function FirstView() {
     
@@ -26,21 +26,7 @@ function FirstView() {
 
     return (
         <div className="FirstView">
-            <header className="FirstView-header">
-                <div className='FirstView-nav'>
-                    <div className='Logo-nav'>
-                        <img src={logo} className="FirstView-logo-nav" alt="logo-nav" />
-                    </div>
-
-                    <div className='Option-nav'>
-                        <div>
-                            <button className="Home-btn"> Menú </button>
-                            <button className="Home-btn"> Ordenes </button>
-                        </div>
-                        <img src={logoCocinero} className="Logo-cocinero" alt="logo" />
-                    </div>
-                </div>
-            </header>
+            <NavHeader />
             <main>
                 <div className="wallpaper ">
                     <div className="wrap-container">
