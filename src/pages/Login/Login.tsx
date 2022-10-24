@@ -58,15 +58,6 @@ function Login() {
         }
     }
 
-    // fetch(`${API_URL}${authPath}`, {
-    //     method: "POST",
-    //     headers: {"Content-Type": "application/json"},
-    //     body: JSON.stringify(data) // convierte js a json
-    // })
-    //     .then(response => response.json())
-    //     console.log
-    //     .then(data => console.log(data));
-
     return (
         <div className="Login">
             <header className="Login-header">
