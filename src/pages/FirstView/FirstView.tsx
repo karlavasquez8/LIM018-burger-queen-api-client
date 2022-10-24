@@ -4,32 +4,26 @@ import './firstView.css'
 import CardItems from './CardItems'
 import React, {useEffect, useState} from 'react'
 
-
-const [contadorState, setContadorState] = useState(0);
-
-const [decrementCounter, setDecrementCounter] = useState(0);
-
-  useEffect(() => {
-    console.log('Hola soy un componente');
-    }, [decrementCounter])
-
-//   const handleDecrement = () => {
-//     console.log(event.target);
-//     console.log(event.currentTarget);
-//   };
-//  =>{
-//     console.log('decrementando...')
-//     setDecrementCounter(decrementCounter+1);
-//     setContadorState(contadorState-1);
-//   }
-
-  const handleIncrement = () =>{
-    console.log('incrementando...')
-    setContadorState(contadorState+1);
-  }
-
-
 function FirstView() {
+    
+    const [contadorState, setContadorState] = useState(0);
+    const [decrementCounter, setDecrementCounter] = useState(0);
+
+    useEffect(() => {
+        console.log('Hola soy un componente');
+        }, [decrementCounter])
+
+        const handleDecrement = () =>{
+            console.log('decrementando...')
+            setDecrementCounter(decrementCounter+1);
+            setContadorState(contadorState-1);
+        }
+
+    const handleIncrement = () =>{
+        console.log('incrementando...')
+        setContadorState(contadorState+1);
+    }
+
     return (
         <div className="FirstView">
             <header className="FirstView-header">
@@ -66,10 +60,14 @@ function FirstView() {
                                     <div>
                                         <span> CLIENTE:</span>
                                         <span> nombre del cliente</span>
-                                        <h4>{contadorState}</h4>
                                         <br />
-                                        {/* <button onClick={handleDecrement}>-</button> */}
-                                        <button onClick={event => console.log(event)}>+</button>
+                                        <button onClick={handleDecrement}>-</button>
+                                        <h4>{contadorState}</h4>
+                                        <button onClick={handleIncrement}>+</button>
+                                        <br />
+                                        <button onClick={handleDecrement}>-</button>
+                                        <h4>{contadorState}</h4>
+                                        <button onClick={handleIncrement}>+</button>
                                         <br />
                                     </div>
                                     <div>
