@@ -1,29 +1,13 @@
 
-import React,{useEffect, useState}from 'react'
+import React from 'react'
 import './firstView.css'
 import CardItems from './CardItems'
 import NavHeader from '../Components/NavHeader'
+import AddRemove from './AddRemove';
+
 
 function FirstView() {
     
-    const [contadorState, setContadorState] = useState(0);
-    const [decrementCounter, setDecrementCounter] = useState(0);
-
-    useEffect(() => {
-        console.log('Hola soy un componente');
-        }, [decrementCounter])
-
-        const handleDecrement = () =>{
-            console.log('decrementando...')
-            setDecrementCounter(decrementCounter+1);
-            setContadorState(contadorState-1);
-        }
-
-    const handleIncrement = () =>{
-        console.log('incrementando...')
-        setContadorState(contadorState+1);
-    }
-
     return (
         <div className="FirstView">
             <NavHeader />
@@ -47,14 +31,8 @@ function FirstView() {
                                         <span> CLIENTE:</span>
                                         <span> nombre del cliente</span>
                                         <br />
-                                        <button onClick={handleDecrement}>-</button>
-                                        <h4>{contadorState}</h4>
-                                        <button onClick={handleIncrement}>+</button>
-                                        <br />
-                                        <button onClick={handleDecrement}>-</button>
-                                        <h4>{contadorState}</h4>
-                                        <button onClick={handleIncrement}>+</button>
-                                        <br />
+                                        <AddRemove/>
+                                        <AddRemove/>
                                     </div>
                                     <div>
                                         <span> ITEM</span>
