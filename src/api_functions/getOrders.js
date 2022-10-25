@@ -1,5 +1,5 @@
 const BASE_URL = "http://localhost:3001";
-const orderPath = '/products';
+const orderPath = '/orders';
 const token = localStorage.getItem("token");
 
 const getOrders = async (newState) => {

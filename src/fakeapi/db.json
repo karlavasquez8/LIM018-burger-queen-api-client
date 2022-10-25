@@ -1,4 +1,8 @@
 {
+  "auth": {
+    "password": "pedro",
+    "email": "karlavasquez817@gmail.com"
+  },
   "users": [
     {
       "id": 1,

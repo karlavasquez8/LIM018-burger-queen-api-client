@@ -5,7 +5,7 @@ import logoCocinero from '../../img/logo-cocinero.png'
 
 export default function NavHeader() {
     return (
-        <header className="FirstView-header">
+        <header id="menu" className="FirstView-header">
             <div className='FirstView-nav'>
                 <div className='Logo-nav'>
                     <img src={logo} className="FirstView-logo-nav" alt="logo-nav" />

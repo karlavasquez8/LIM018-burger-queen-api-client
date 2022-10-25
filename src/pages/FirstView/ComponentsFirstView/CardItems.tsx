@@ -1,5 +1,4 @@
 import React from 'react';
-import AddItems from './AddItems';
 
 interface CardItemsProps {
     name: string;
@@ -16,7 +15,6 @@ function CardItems({ name, price, img }: CardItemsProps) {
             </div>
             <div className='data-items'>
                 <span className='cash-item'>{price}</span>
-                <AddItems/>
             </div>
         </section>
     )
