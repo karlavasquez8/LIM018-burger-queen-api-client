@@ -36,6 +36,6 @@ server.post('/auth', (req, res) => {
 // para probar si esta corriendo el servidor
 
 server.use(router)
-server.listen(3001, () => {
+server.listen(3002, () => {
   console.log('JSON Server is running')
 })

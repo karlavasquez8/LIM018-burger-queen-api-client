@@ -1,28 +1,50 @@
 
-import React,{useEffect, useState}from 'react'
+import React, {useState, useEffect} from 'react'
 import './firstView.css'
 import CardItems from './CardItems'
 import NavHeader from '../Components/NavHeader'
+import AddRemove from './AddRemove';
+import { MenuButton } from '../Components/Buttons'
+import AddItem from './AddItems'
+import getProducts from '../../api_functions/getProducts';
+
 
 function FirstView() {
-    
-    const [contadorState, setContadorState] = useState(0);
-    const [decrementCounter, setDecrementCounter] = useState(0);
+
+    const [menu, setMenu] = useState("breakfast");
+    // menu primero vale breakfast y setMenu se actualiza al dar click xej: hamburguer
+
+    const [products, setProducts] = useState([]);
+    const [arrayOfOrder, setArrayOfOrder] = useState([]);
+    const [bg2, setBg2] = useState("")  
+    const [client, setClient] = useState("");
+    const [table, setTable] = useState("");
 
     useEffect(() => {
-        console.log('Hola soy un componente');
-        }, [decrementCounter])
+        getProducts(setProducts) 
+    }, [])
 
-        const handleDecrement = () =>{
-            console.log('decrementando...')
-            setDecrementCounter(decrementCounter+1);
-            setContadorState(contadorState-1);
-        }
-
-    const handleIncrement = () =>{
-        console.log('incrementando...')
-        setContadorState(contadorState+1);
+    const filteredProducts = (typeMenu:string) => {  // typeMenu es un string xej 'dinner'
+        const typeProducts = products.filter((prod) => { //product es el [{},{},...] de productos de la data
+            return prod.type === typeMenu 
+        })
+            
+        const cards = typeProducts.map((type)=> { // este es el objProd unico filtrado x tipo
+        //typeProducts es el array de obj
+            return (<CardItems 
+                name = {type.name} // type es el prod
+                image = {type.image} 
+                key = {type.id} 
+                id = {type.id}
+                adding = {() => AddItem} 
+            />)
+        })
+        return cards;
+    
     }
+ 
+
+
 
     return (
         <div className="FirstView">
@@ -47,14 +69,8 @@ function FirstView() {
                                         <span> CLIENTE:</span>
                                         <span> nombre del cliente</span>
                                         <br />
-                                        <button onClick={handleDecrement}>-</button>
-                                        <h4>{contadorState}</h4>
-                                        <button onClick={handleIncrement}>+</button>
-                                        <br />
-                                        <button onClick={handleDecrement}>-</button>
-                                        <h4>{contadorState}</h4>
-                                        <button onClick={handleIncrement}>+</button>
-                                        <br />
+                                        <AddRemove/>
+                                        <AddRemove/>
                                     </div>
                                     <div>
                                         <span> ITEM</span>
