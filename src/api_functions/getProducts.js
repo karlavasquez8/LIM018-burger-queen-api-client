@@ -1,9 +1,9 @@
 const BASE_URL = "http://localhost:3002";
-const productPath = '/products';
+const menuPath = '/menu';
 const token = localStorage.getItem("token");
 
-const getProducts = async (newState) => {
-    const res = await fetch(`${BASE_URL}${productPath}`, {
+const getProducts = async () => {
+    const res = await fetch(`${BASE_URL}${menuPath}`, {
         method: "GET",
         headers: {
             "Content-type": "application/json;charset=UTF-8",
@@ -11,11 +11,8 @@ const getProducts = async (newState) => {
         }
     });
     /* console.log(res, 'respuesta de la petición'); */
-    
-    const dataProducts = await res.json();
-    /* console.log(dataProducts, 'data products'); */
 
-    return newState(dataProducts);
+    return res.json();
 }
 
 export default getProducts;

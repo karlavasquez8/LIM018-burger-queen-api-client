@@ -13,14 +13,14 @@ server.use((req, res, next) => {
   console.log(req.headers);
 
 
-  if(req.method === "POST" && req.path === "/auth") {
-   next();
-  } else if(req.headers.authorization === `Bearer ${secret}`) {
-  next()
+  if (req.method === "POST" && req.path === "/auth") {
+    next();
+  } else if (req.headers.authorization === `Bearer ${secret}`) {
+    next()
   } else {
-  res.sendStatus(401)
+    res.sendStatus(401)
   }
- })
+})
 
 
 server.post('/auth', (req, res) => {
@@ -36,6 +36,6 @@ server.post('/auth', (req, res) => {
 // para probar si esta corriendo el servidor
 
 server.use(router)
-server.listen(3002, () => {
+server.listen(3001, () => {
   console.log('JSON Server is running')
 })
