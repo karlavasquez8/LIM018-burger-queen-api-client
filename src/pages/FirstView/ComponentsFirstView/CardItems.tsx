@@ -9,7 +9,7 @@ interface CardItemsProps {
 function CardItems({ name, price, img }: CardItemsProps) {
     return (
         <section className='info-items'>
-            <div className="img-item">
+            <div className="img-item-container">
                 <img src={img} className="img-item" alt="" />
                 <span>{name}</span>
             </div>

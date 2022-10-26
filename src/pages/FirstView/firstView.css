@@ -42,10 +42,12 @@ header {
 
 .info-items {
     background-color: #BF8B67;
-    font-size: 14pxpx;
+    font-size: 14px;
     width: 30%;
-    margin: 2rem;
+    margin: 0.5rem;
     color: #FFFFFF;
+    border-radius: 0.5rem;
+    height: 100%;
 }
 
 .data-items {
@@ -56,6 +58,7 @@ header {
     text-align: center;
     background-color: #632626;
     color: #FFFFFF;
+    border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .square-btn {
@@ -88,12 +91,26 @@ header {
 .items {
     background-color: #FFFFFF;
     width: 50%;
-    height: 40vh;
+    height: 70vh;
+    margin: 3rem;
+}
+
+.item2 {
+    background-color: #FFFFFF;
+    width: 50%;
+    height: 70vh;
     margin: 3rem;
 }
 
 .img-item {
     width: 70%;
+}
+
+.img-item-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem 0 1rem;
+    width: 70%
 }
 
 .fondo-items {

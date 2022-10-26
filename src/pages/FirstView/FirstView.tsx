@@ -23,8 +23,8 @@ function FirstView() {
     const [products, setProducts] = useState<Products[]>([]);
     const [bg1, setBg2] = useState("")
     const [bg3, setBg3] = useState("")
-    const [client, setBreackfast] = useState("");
-    const [table, setTable] = useState("");
+    // const [client, setBreackfast] = useState("");
+    // const [table, setTable] = useState("");
 
     useEffect(() => {
         async function getServices() {
@@ -72,7 +72,7 @@ function FirstView() {
                                     {products.map(({ id, img, name, price, type }) => <CardItems img={img} name={name} price={price} key={id} />)}
                                 </div>
                             </div>
-                            <div className='items'>
+                            <div className='item2'>
                                 <section>
                                     <div>
                                         <span> CLIENTE:</span>

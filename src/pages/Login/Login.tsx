@@ -69,7 +69,7 @@ function Login() {
                     <form className='Login-form' onSubmit={handleSubmit}>
                         <p> Correo </p>
                         <input name="email" type="email" id="inputEmail" className="Login-input" placeholder="E-mail"
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(event) => setEmail(event.target.value)}
                         />
                         <p> Contraseña</p>
                         <input name="password" type="password" id="inputPassword" className="Login-input" placeholder="Contraseña"
