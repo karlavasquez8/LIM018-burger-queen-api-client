@@ -1,12 +1,6 @@
 import React from 'react';
 
-interface CardItemsProps {
-    name: string;
-    img: string;
-    price: number;
-}
-
-function CardItems({ name, price, img }: CardItemsProps) {
+function CardItems({ name, price, img }) {
     return (
         <section className='info-items'>
             <div className="img-item-container">

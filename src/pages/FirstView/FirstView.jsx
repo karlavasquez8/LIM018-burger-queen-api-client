@@ -7,22 +7,13 @@ import AddRemove from './ComponentsFirstView/AddRemove';
 import getProducts from '../../api_functions/getProducts';
 import { MenuButton } from '../Components/Buttons';
 
-interface Products {
-    "id": number,
-    "name": string,
-    "img": string,
-    "price": number,
-    "type": string
-}
-
 function FirstView() {
 
     const [menu, setMenu] = useState("breakfast");
     // menu primero vale breakfast y setMenu se actualiza al dar click xej: hamburguer
 
-    const [products, setProducts] = useState<Products[]>([]);
+    const [products, setProducts] = useState([]);
     const [bg1, setBg2] = useState("")
-    const [bg3, setBg3] = useState("")
     // const [client, setBreackfast] = useState("");
     // const [table, setTable] = useState("");
 
@@ -64,7 +55,6 @@ function FirstView() {
                                     <MenuButton title="Desayuno" bg={bg1} whenClick={() => {
                                         setMenu("breakfast")
                                         setBg2("active")
-                                        setBg3("")
                                     }} />
                                     <button className="Menu-btn"> Almuerzo y Cena </button>
                                 </div>

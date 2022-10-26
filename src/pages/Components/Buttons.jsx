@@ -1,5 +1,5 @@
 import React from "react"
-export const MenuButton = (props: any) => {
+export const MenuButton = (props) => {
 
     return (
         <button
