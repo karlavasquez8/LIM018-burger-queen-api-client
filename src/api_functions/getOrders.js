@@ -3,7 +3,7 @@ const orderPath = '/orders';
 const token = localStorage.getItem("token");
 
 const getOrders = async (newState) => {
-
+    
     const result = await fetch(`${BASE_URL}${orderPath}`, {
         method: "GET",
         headers: {
@@ -11,9 +11,9 @@ const getOrders = async (newState) => {
             "Authorization": `Bearer ${token}`
         }
     })
-
+   
     const dataOrders = await result.json();
-
+  
     return newState(dataOrders)
 }
 

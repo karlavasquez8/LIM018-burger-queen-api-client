@@ -33,16 +33,45 @@ server.post('/auth', (req, res) => {
   } else res.status(400).send('Bad Request')
 })
 
+server.post('/orders', async (req, res) => {
+  try {
+    const today = new Date();
+    console.log(today, 'hoy');
+    const now = today.toLocaleString('en-US');
+    const order = {
+      id: req.body.id,
+      userId: req.body.userId,
+      client: req.body.client,
+      products: req.body.products,
+      status: 'pending',
+      dateEntry: now,
+    };
 
-// server.get('/products', (req, res) => {
-//   res.jsonp({
-//     products: dataProducts.products
-//   })
+    const orders = router.db.get('orders');
+    console.log("orders ->", orders);
 
-// })
+    console.log("largo de orden", orders.__wrapped__.orders.length);
+    
+    console.log("wrapped", orders.__wrapped__);
+    
+    order.id = orders.__wrapped__.orders.length + 1;
+
+    const result = await orders.push(order).write();
+    console.log("result", result);
+    res.status(200).jsonp(order);
+
+  } catch(err){
+    res.status(400).send("No se indica Id, o se intenta crear una orden sin productos");
+    res.status(401).send("No hay cabecera de autenticación");
+  }
+});
+
+
 // para probar si esta corriendo el servidor
 
 server.use(router)
 server.listen(3001, () => {
   console.log('JSON Server is running')
 })
+
+
