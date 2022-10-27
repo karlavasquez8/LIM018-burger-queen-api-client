@@ -9,7 +9,7 @@ import { MenuButton } from '../Components/Buttons';
 
 function FirstView() {
 
-    const [menu, setMenu] = useState("breakfast");
+    const [type, setType] = useState("breakfast");
     // menu primero vale breakfast y setMenu se actualiza al dar click xej: hamburguer
 
     const [products, setProducts] = useState([]);
@@ -24,6 +24,8 @@ function FirstView() {
         }
         getServices();
     }, [])
+
+    const filterProducts = products.filter((product) => product.type === type);
 
     //     const filteredProducts = (typeMenu: string) => {  // typeMenu es un string xej 'dinner'
     //         const typeProducts = products.filter((prod) => { //product es el [{},{},...] de productos de la data
@@ -53,13 +55,16 @@ function FirstView() {
                             <div className='items'>
                                 <div className='square-btn'>
                                     <MenuButton title="Desayuno" bg={bg1} whenClick={() => {
-                                        setMenu("breakfast")
+                                        setType("breakfast")
                                         setBg2("active")
                                     }} />
-                                    <button className="Menu-btn"> Almuerzo y Cena </button>
+                                    <MenuButton title="Almuerzo y cena" bg={bg1} whenClick={() => {
+                                        setType("lunch")
+                                        setBg2("active")
+                                    }} />
                                 </div>
                                 <div className='fondo-items'>
-                                    {products.map(({ id, img, name, price, type }) => <CardItems img={img} name={name} price={price} key={id} />)}
+                                    {filterProducts.map(({ id, img, name, price }) => <CardItems img={img} name={name} price={price} key={id} />)}
                                 </div>
                             </div>
                             <div className='item2'>
