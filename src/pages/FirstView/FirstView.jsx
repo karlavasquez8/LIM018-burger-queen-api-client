@@ -7,6 +7,7 @@ import AddRemove from './ComponentsFirstView/AddRemove';
 import getProducts from '../../api_functions/getProducts';
 import { MenuButton } from '../Components/Buttons';
 
+
 function FirstView() {
 
     const [type, setType] = useState("breakfast");
@@ -19,8 +20,7 @@ function FirstView() {
 
     useEffect(() => {
         async function getServices() {
-            const productsData = await getProducts()
-            setProducts(productsData);
+            const productsData = await getProducts(setProducts)
         }
         getServices();
     }, [])
@@ -65,6 +65,7 @@ function FirstView() {
                                 </div>
                                 <div className='fondo-items'>
                                     {filterProducts.map(({ id, img, name, price }) => <CardItems img={img} name={name} price={price} key={id} />)}
+                                    
                                 </div>
                             </div>
                             <div className='item2'>
