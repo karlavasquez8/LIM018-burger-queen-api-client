@@ -1,0 +1,27 @@
+.trash {
+    width: 28px;
+}
+
+.container-products-order {
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+.container-add-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-add-order {
+    margin: 1rem;
+    font-size: 14px;
+    /* background: aquamarine; */
+    color: #632626;
+    font-weight: bold;
+}
+
+.btn-max-min {
+    display: inline;
+}

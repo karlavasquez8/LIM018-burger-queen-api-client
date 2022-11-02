@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import FirstView from './pages/FirstView/FirstView';
 import Login from './pages/Login/Login'
+import './index.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 const root = ReactDOM.createRoot(

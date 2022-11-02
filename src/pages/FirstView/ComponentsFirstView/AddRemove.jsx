@@ -1,29 +1,40 @@
-import React,{useEffect, useState}from 'react'
+import React, { useEffect, useState } from 'react'
+import trash from '../../../img/trash.png';
 
-function AddRemove() {
-const [contadorState, setContadorState] = useState(0);
-    const [decrementCounter, setDecrementCounter] = useState(0);
+function AddRemove({ onChange = () => { }, productName, price }) {
+    const [contadorState, setContadorState] = useState(1);
 
     useEffect(() => {
         console.log('Hola soy un componente');
-        }, [decrementCounter])
+        onChange(contadorState)
+    }, [contadorState])
 
-        const handleDecrement = () =>{
-            console.log('decrementando...')
-            setDecrementCounter(decrementCounter+1);
-            setContadorState(contadorState-1);
-        }
+    const handleDecrement = () => {
+        console.log('decrementando...')
+        setContadorState(contadorState - 1);
+    }
 
-    const handleIncrement = () =>{
+    const handleIncrement = () => {
         console.log('incrementando...')
-        setContadorState(contadorState+1);
+        setContadorState(contadorState + 1);
     }
     return (
-        <div>
-            <button onClick={handleDecrement}>-</button>
-            <h4>{contadorState}</h4>
-            <button onClick={handleIncrement}>+</button>
+        <div className="container-products-order">
+            <span> {productName}</span>
+            <div className='btn-max-min'>
+                <button onClick={handleDecrement} disabled={contadorState === 1} >-</button>
+                <h4>{contadorState}</h4>
+                <button onClick={handleIncrement}>+</button>
+            </div>
+            <span> S/.{price * contadorState} </span>
+            <div>
+                <button >
+                    <img className="trash" src={trash} alt="trash" />
+                </button>
+            </div>
+
         </div>
+
     )
 }
 

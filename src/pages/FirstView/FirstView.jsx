@@ -3,15 +3,15 @@ import React, { useState, useEffect } from 'react'
 import './firstView.css'
 import CardItems from './ComponentsFirstView/CardItems'
 import NavHeader from '../Components/NavHeader'
-import AddRemove from './ComponentsFirstView/AddRemove';
 import getProducts from '../../api_functions/getProducts';
 import { MenuButton } from '../Components/Buttons';
+import AddOrder from './ComponentsFirstView/AddOrder';
 
 
 function FirstView() {
 
     const [type, setType] = useState("breakfast");
-    // menu primero vale breakfast y setMenu se actualiza al dar click xej: hamburguer
+    // menu primero vale breakfast es el tipo de {producto}
 
     const [products, setProducts] = useState([]);
     const [bg1, setBg2] = useState("")
@@ -26,24 +26,6 @@ function FirstView() {
     }, [])
 
     const filterProducts = products.filter((product) => product.type === type);
-
-    //     const filteredProducts = (typeMenu: string) => {  // typeMenu es un string xej 'dinner'
-    //         const typeProducts = products.filter((prod) => { //product es el [{},{},...] de productos de la data
-    //             return prod.type === typeMenu
-    //         })
-
-    //         const Cards = typeProducts.map(({ id, img, name, price, type }=> { // este es el objProd unico filtrado x tipo
-    //         //typeProducts es el array de obj
-    //         return (<CardItems
-    //             img={img}
-    //             name={name}
-    //             price={price}
-    //             key={id}
-    //         />)
-    //     })
-    //     return Cards;
-
-    // }
 
     return (
         <div className="FirstView">
@@ -63,26 +45,13 @@ function FirstView() {
                                         setBg2("active")
                                     }} />
                                 </div>
-                                <div className='fondo-items'>
+                                <div className='fondo-items Table-items'>
                                     {filterProducts.map(({ id, img, name, price }) => <CardItems img={img} name={name} price={price} key={id} />)}
-                                    
+
                                 </div>
                             </div>
                             <div className='item2'>
-                                <section>
-                                    <div>
-                                        <span> CLIENTE:</span>
-                                        <span> nombre del cliente</span>
-                                        <br />
-                                        <AddRemove />
-                                        <AddRemove />
-                                    </div>
-                                    <div>
-                                        <span> ITEM</span>
-                                        <span> CANT</span>
-                                        <span> PRECIO</span>
-                                    </div>
-                                </section>
+                                <AddOrder items={products} />
                             </div>
                         </div>
                     </div>

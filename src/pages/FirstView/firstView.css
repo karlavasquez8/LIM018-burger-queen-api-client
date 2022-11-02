@@ -14,7 +14,6 @@ header {
 
 .Logo-cocinero {
     width: 10%;
-
 }
 
 .FirstView-logo-nav {
@@ -48,17 +47,17 @@ header {
     color: #FFFFFF;
     border-radius: 0.5rem;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .data-items {
     padding: 7px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
     background-color: #632626;
-    color: #FFFFFF;
     border-radius: 0 0 0.5rem 0.5rem;
+    width: 100%;
 }
 
 .square-btn {
@@ -100,6 +99,7 @@ header {
     width: 50%;
     height: 70vh;
     margin: 3rem;
+    border-radius: 0.3rem;
 }
 
 .img-item {
@@ -109,7 +109,8 @@ header {
 .img-item-container {
     display: flex;
     flex-direction: column;
-    margin: 0 1rem 0 1rem;
+    align-items: center;
+    margin: 0.5rem;
     width: 70%
 }
 
