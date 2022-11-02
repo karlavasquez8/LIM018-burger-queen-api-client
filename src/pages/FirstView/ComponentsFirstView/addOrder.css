@@ -17,11 +17,47 @@
 .header-add-order {
     margin: 1rem;
     font-size: 14px;
-    /* background: aquamarine; */
     color: #632626;
     font-weight: bold;
+    background: #DACC96;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.btn-counter {
+    display: flex;
+    flex-direction: inherit;
+}
+
+.order-product-name {
+    width: 150px;
+}
+
+.style-order {
+    margin: 0.5rem 1rem;
+}
+
+.btn-trash {
+    background: 0;
+    border: 0;
 }
 
 .btn-max-min {
-    display: inline;
+    border: none;
+    border-radius: 0.5rem;
+    background: #632626;
+    color: #FFFFFF;
+    width: 30px;
+}
+
+.btn-max-min:disabled {
+    background: #dfdfdf;
+    color: black;
+}
+
+.title-order {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+
 }

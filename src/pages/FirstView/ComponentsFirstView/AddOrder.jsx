@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AddRemove from './AddRemove';
+import ItemOrder from './ItemOrder';
 import trash from '../../../img/trash.png';
 import './addOrder.css'
 
@@ -8,7 +8,7 @@ export default function AddOrder({ items, total }) {
 
     const Orders = items.map((item) => {
         return (
-            <AddRemove productName={item.name} price={item.price} key={item.id} />
+            <ItemOrder productName={item.name} price={item.price} key={item.id} id={item.id} onChange={(cantidad, id) => { console.log(cantidad, id) }} />
 
         )
     })
@@ -19,11 +19,11 @@ export default function AddOrder({ items, total }) {
                 <span> CLIENTE:</span>
                 <input type="text" value={client} onChange={(event) => setClient(event.target.value)} />
                 <br />
-                <div className='Orders'>
-                    <span> ITEM</span>
-                    <span> CANT</span>
-                    <span> PRECIO</span>
-                </div>
+            </div>
+            <div className='title-order'>
+                <span className='style-order order-product-name '> ITEM</span>
+                <span className='style-order'> CANT</span>
+                <span className='style-order'> PRECIO</span>
             </div>
 
             <div className='container-tabler'>
@@ -31,7 +31,7 @@ export default function AddOrder({ items, total }) {
             </div>
             <div>
                 <span>TOTAL</span>
-                <span>s./{total}</span>
+                <span>S/.{total}</span>
             </div>
 
 

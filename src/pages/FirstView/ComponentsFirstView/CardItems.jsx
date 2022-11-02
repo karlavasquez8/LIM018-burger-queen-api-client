@@ -1,8 +1,8 @@
 import React from 'react';
 
-function CardItems({ name, price, img }) {
+function CardItems({ name, price, img, onAddButtonClick }) {
     return (
-        <button className='info-items'>
+        <button className='info-items' onClick={() => onAddButtonClick()}>
             <div className="img-item-container">
                 <img src={img} className="img-item" alt="" loading="lazy" />
                 <span>{name}</span>

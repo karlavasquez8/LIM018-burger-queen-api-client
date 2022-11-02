@@ -15,7 +15,6 @@ function FirstView() {
 
     const [products, setProducts] = useState([]);
     const [bg1, setBg2] = useState("")
-    // const [client, setBreackfast] = useState("");
     // const [table, setTable] = useState("");
 
     useEffect(() => {
@@ -26,6 +25,10 @@ function FirstView() {
     }, [])
 
     const filterProducts = products.filter((product) => product.type === type);
+
+    const addProducts = (product) => {
+
+    }
 
     return (
         <div className="FirstView">
@@ -46,7 +49,7 @@ function FirstView() {
                                     }} />
                                 </div>
                                 <div className='fondo-items Table-items'>
-                                    {filterProducts.map(({ id, img, name, price }) => <CardItems img={img} name={name} price={price} key={id} />)}
+                                    {filterProducts.map(({ id, img, name, price }) => <CardItems img={img} name={name} price={`S/.${price}`} key={id} />)}
 
                                 </div>
                             </div>
