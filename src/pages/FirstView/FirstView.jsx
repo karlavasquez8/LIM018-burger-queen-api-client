@@ -14,6 +14,7 @@ function FirstView() {
     // menu primero vale breakfast es el tipo de {producto}
 
     const [products, setProducts] = useState([]);
+    const [orderProducts, setOrderProducts] = useState([])
     const [bg1, setBg2] = useState("")
     // const [table, setTable] = useState("");
 
@@ -26,9 +27,14 @@ function FirstView() {
 
     const filterProducts = products.filter((product) => product.type === type);
 
-    const addProducts = (product) => {
-
+    const onAddButtonClick = (product) => {
+        if (!orderProducts.find((item) => {
+            return item.id == product.id
+        })) {
+            setOrderProducts([...orderProducts, product])
+        }
     }
+
 
     return (
         <div className="FirstView">
@@ -49,12 +55,12 @@ function FirstView() {
                                     }} />
                                 </div>
                                 <div className='fondo-items Table-items'>
-                                    {filterProducts.map(({ id, img, name, price }) => <CardItems img={img} name={name} price={`S/.${price}`} key={id} />)}
+                                    {filterProducts.map(({ id, img, name, price }) => <CardItems img={img} name={name} price={price} id={id} key={id} onAddButtonClick={onAddButtonClick} />)}
 
                                 </div>
                             </div>
                             <div className='item2'>
-                                <AddOrder items={products} />
+                                {orderProducts.length === 0 ? <div>Todavia no tienen hambre</div> : <AddOrder items={orderProducts} />}
                             </div>
                         </div>
                     </div>

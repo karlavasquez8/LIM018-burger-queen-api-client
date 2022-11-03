@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import ItemOrder from './ItemOrder';
-import trash from '../../../img/trash.png';
 import './addOrder.css'
+import { MenuButton } from "../../Components/Buttons"
+import postOrders from '../../../api_functions/postOrders';
 
 export default function AddOrder({ items, total }) {
     const [client, setClient] = useState("")
+    const [listOrder, setListOrder] = useState([])
 
     const Orders = items.map((item) => {
         return (
@@ -33,8 +35,7 @@ export default function AddOrder({ items, total }) {
                 <span>TOTAL</span>
                 <span>S/.{total}</span>
             </div>
-
-
+            <MenuButton title='Enviar a la cocina' whenClick={() => { postOrders(listOrder) }} />
         </section>
     );
 }

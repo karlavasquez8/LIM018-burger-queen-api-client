@@ -30,7 +30,7 @@
 }
 
 .order-product-name {
-    width: 150px;
+    max-width: 40%;
 }
 
 .style-order {
@@ -47,7 +47,7 @@
     border-radius: 0.5rem;
     background: #632626;
     color: #FFFFFF;
-    width: 30px;
+    max-width: 35%;
 }
 
 .btn-max-min:disabled {
@@ -57,7 +57,12 @@
 
 .title-order {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 16px;
+    width: 100%;
 
+}
+
+.container-tabler {
+    width: 100%;
 }

@@ -2,7 +2,7 @@ const BASE_URL = "http://localhost:3001";
 const orderPath = '/orders';
 const token = localStorage.getItem("token");
 
-const postOrders = async(order) => {
+const postOrders = async (order) => {
 
     const res = await fetch(`${BASE_URL}${orderPath}`, {
         method: "POST",
@@ -14,7 +14,6 @@ const postOrders = async(order) => {
     })
 
     const result = await res.json();
-    console.log(result);
     return result
 }
 
