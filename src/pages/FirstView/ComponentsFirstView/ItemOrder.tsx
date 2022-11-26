@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import trash from '../../../img/trash.png';
 
-function ItemOrder({ onChange = () => { }, productName, price, id }) {
+interface ItemOrderProps {
+    onChange: (contador: number, id: number) => void;
+    productName: string;
+    price: number;
+    id: number;
+}
+
+function ItemOrder(props: ItemOrderProps) {
+    const { onChange = () => { }, productName, price, id } = props;
     const [contadorState, setContadorState] = useState(1);
 
     useEffect(() => {

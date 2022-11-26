@@ -1,6 +1,16 @@
 import React from 'react';
+import { Product } from '../../domain/Products';
 
-function CardItems({ name, price, img, onAddButtonClick, id }) {
+interface CardItemsProps {
+    name: string;
+    price: number;
+    img: string;
+    id: number;
+    onAddButtonClick: (product: Product) => void
+}
+
+function CardItems(props: CardItemsProps) {
+    const { name, price, img, onAddButtonClick, id } = props
     return (
         <button className='info-items' onClick={() => onAddButtonClick({ name, price, id })}>
             <div className="img-item-container">

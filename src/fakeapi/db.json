@@ -95,5 +95,36 @@
       "price": 7,
       "type": "lunch"
     }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": "1",
+      "client": "Kami",
+      "products": [
+        {
+          "name": "Hamburguesa Doble",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "name": "Agua 500 ml",
+          "price": 5,
+          "qty": 1
+        },
+        {
+          "name": "Papas Fritas",
+          "price": 10,
+          "qty": 2
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/25/2022, 5:11:42 PM"
+    },
+    {
+      "id": 2,
+      "status": "pending",
+      "dateEntry": "11/4/2022, 1:27:57 PM"
+    }
   ]
 }

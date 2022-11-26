@@ -3,17 +3,25 @@ import ItemOrder from './ItemOrder';
 import './addOrder.css'
 import { MenuButton } from "../../Components/Buttons"
 import postOrders from '../../../api_functions/postOrders';
+import { Product } from '../../domain/Products';
 
-export default function AddOrder({ items, total }) {
+interface AddOrderProps {
+    items: Product[];
+    total: number;
+}
+
+export default function AddOrder(props: AddOrderProps) {
+    const { items, total } = props;
     const [client, setClient] = useState("")
     const [listOrder, setListOrder] = useState([])
 
     const Orders = items.map((item) => {
         return (
-            <ItemOrder productName={item.name} price={item.price} key={item.id} id={item.id} onChange={(cantidad, id) => { console.log(cantidad, id) }} />
+            <ItemOrder productName={item.name} price={item.price} key={item.id} id={item.id} onChange={(cantidad: number, id: number) => { console.log(cantidad, id) }} />
 
         )
     })
+    console.log(listOrder)
 
     return (
         <section className='container-add-order'>
