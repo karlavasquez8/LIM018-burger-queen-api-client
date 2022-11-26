@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ItemOrder from './ItemOrder';
 import './addOrder.css'
-import { MenuButton } from "../../Components/Buttons"
 import postOrders from '../../../api_functions/postOrders';
 import { Product } from '../../domain/Products';
 
@@ -10,7 +9,7 @@ interface AddOrderProps {
     total: number;
 }
 
-export default function AddOrder(props: AddOrderProps) {
+export default function ListOrder(props: AddOrderProps) {
     const { items, total } = props;
     const [client, setClient] = useState("")
     const [listOrder, setListOrder] = useState([])
@@ -21,7 +20,6 @@ export default function AddOrder(props: AddOrderProps) {
 
         )
     })
-    console.log(listOrder)
 
     return (
         <section className='container-add-order'>
@@ -43,7 +41,6 @@ export default function AddOrder(props: AddOrderProps) {
                 <span>TOTAL</span>
                 <span>S/.{total}</span>
             </div>
-            <MenuButton title='Enviar a la cocina' whenClick={() => { postOrders(listOrder) }} />
         </section>
     );
 }

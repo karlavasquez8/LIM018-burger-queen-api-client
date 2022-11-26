@@ -1,11 +1,7 @@
 import React from 'react';
 import { Product } from '../../domain/Products';
 
-interface CardItemsProps {
-    name: string;
-    price: number;
-    img: string;
-    id: number;
+interface CardItemsProps extends Omit<Product, "type"> {
     onAddButtonClick: (product: Product) => void
 }
 

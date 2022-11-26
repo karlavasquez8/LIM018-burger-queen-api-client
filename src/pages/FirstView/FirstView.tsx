@@ -4,8 +4,9 @@ import './firstView.css'
 import CardItems from './ComponentsFirstView/CardItems'
 import NavHeader from '../Components/NavHeader'
 import getProducts from '../../api_functions/getProducts';
-import { MenuButton } from '../Components/Buttons';
-import AddOrder from './ComponentsFirstView/AddOrder';
+import { Button } from '../Components/Button';
+import ListOrder from './ComponentsFirstView/AddOrder';
+import { Product } from '../domain/Products';
 
 
 function FirstView() {
@@ -13,8 +14,8 @@ function FirstView() {
     const [type, setType] = useState("breakfast");
     // menu primero vale breakfast es el tipo de {producto}
 
-    const [products, setProducts] = useState([]);
-    const [orderProducts, setOrderProducts] = useState([])
+    const [products, setProducts] = useState<Product[]>([]);
+    const [orderProducts, setOrderProducts] = useState<Product[]>([])
     const [bg1, setBg2] = useState("")
     // const [table, setTable] = useState("");
 
@@ -27,7 +28,7 @@ function FirstView() {
 
     const filterProducts = products.filter((product) => product.type === type);
 
-    const onAddButtonClick = (product) => {
+    const onAddButtonClick = (product: Product) => {
         if (!orderProducts.find((item) => {
             return item.id == product.id
         })) {
@@ -45,11 +46,11 @@ function FirstView() {
                         <div className="container-menu">
                             <div className='items'>
                                 <div className='square-btn'>
-                                    <MenuButton title="Desayuno" bg={bg1} whenClick={() => {
+                                    <Button title="Desayuno" onClick={() => {
                                         setType("breakfast")
                                         setBg2("active")
                                     }} />
-                                    <MenuButton title="Almuerzo y cena" bg={bg1} whenClick={() => {
+                                    <Button title="Almuerzo y cena" onClick={() => {
                                         setType("lunch")
                                         setBg2("active")
                                     }} />
@@ -60,7 +61,7 @@ function FirstView() {
                                 </div>
                             </div>
                             <div className='item2'>
-                                {orderProducts.length === 0 ? <div>Todavia no tienen hambre</div> : <AddOrder items={orderProducts} />}
+                                {orderProducts.length === 0 ? <div>Todavia no tienen hambre</div> : <ListOrder items={orderProducts} total={0} />}
                             </div>
                         </div>
                     </div>

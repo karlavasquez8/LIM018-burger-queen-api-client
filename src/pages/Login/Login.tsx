@@ -15,13 +15,13 @@ function Login() {
     const navigate = useNavigate()
     const API_URL = "http://localhost:3001";
     const authPath = "/auth";
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState<string>();
+    const [password, setPassword] = useState<string>();
 
     //Capturamos el error
     const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: any) => {
         event.preventDefault();
         localStorage.clear();
 
