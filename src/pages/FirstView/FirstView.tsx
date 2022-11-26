@@ -5,7 +5,7 @@ import CardItems from './ComponentsFirstView/CardItems'
 import NavHeader from '../Components/NavHeader'
 import getProducts from '../../api_functions/getProducts';
 import { Button } from '../Components/Button';
-import ListOrder from './ComponentsFirstView/AddOrder';
+import ListOrder from './ComponentsFirstView/ListOrder';
 import { Product } from '../domain/Products';
 
 
@@ -61,7 +61,7 @@ function FirstView() {
                                 </div>
                             </div>
                             <div className='item2'>
-                                {orderProducts.length === 0 ? <div>Todavia no tienen hambre</div> : <ListOrder items={orderProducts} total={0} />}
+                                {orderProducts.length === 0 ? <div>Todavia no tienen hambre</div> : <ListOrder products={orderProducts} total={0} />}
                             </div>
                         </div>
                     </div>

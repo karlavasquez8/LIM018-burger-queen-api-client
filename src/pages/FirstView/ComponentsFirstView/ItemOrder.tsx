@@ -12,16 +12,16 @@ function ItemOrder(props: ItemOrderProps) {
     const { onChange = () => { }, productName, price, id } = props;
     const [contadorState, setContadorState] = useState(1);
 
-    useEffect(() => {
-        onChange(contadorState, id)
-    }, [contadorState])
-
     const handleDecrement = () => {
-        setContadorState(contadorState - 1);
+        const decrement = contadorState - 1
+        setContadorState(decrement);
+        onChange(decrement, id)
     }
 
     const handleIncrement = () => {
-        setContadorState(contadorState + 1);
+        const increment = contadorState + 1
+        setContadorState(increment);
+        onChange(increment, id)
     }
     return (
         <div className="container-products-order">
